@@ -1,3 +1,12 @@
 # Creation of Shape class
 class Shape:
-    pass # placeholder for code block
+        #__init__ is used to automatically instantiate the Animal class when called
+    # Constructor method for Animal class
+    def __init__(self, structure, color, area): # instance attributes for Animal class  
+        self.structure = structure # Shape type attribute
+        self.color = color # Shape color attribute
+        self.area = area # Shape area attribute
+    
+    # print attributes method for Shape class
+    def details(self):
+        print(f"The Shape type is: {self.structure} and it is {self.color} in color and it has an area of {self.area}cm squared")
