@@ -7,8 +7,8 @@ if __name__ == "__main__": # If this file is being run directly
     horse.details()
     
     # The Shape Class hard coded is instantiated
-    # sqaure = Shape("square", "red", 300)
-    
+    sqaure = Shape("square", "red", 300)
+    square.details()
     
     # The Animal Class with user input is instantiated
     
