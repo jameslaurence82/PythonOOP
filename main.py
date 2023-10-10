@@ -18,6 +18,9 @@ if __name__ == "__main__": # If this file is being run directly
     # The Shape Class hard coded is instantiated
     square = Shape("square", "red", 300)
     square.details()
+    square.get_SUBJECT()
+    square.set_dimension("2D")
+    square.set_dimension("3D")
     
     # The Animal Class with user input is instantiated
     
