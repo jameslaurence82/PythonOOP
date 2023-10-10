@@ -20,7 +20,7 @@ if __name__ == "__main__": # If this file is being run directly
     square.details()
     square.get_SUBJECT()
     square.set_dimension("2D")
-    square.set_dimension("3D")
+    square.set_dimension("3D") # <<== issue with this line of code on module
     
     # The Animal Class with user input is instantiated
     

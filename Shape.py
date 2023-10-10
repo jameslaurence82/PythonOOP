@@ -36,7 +36,5 @@ class Shape:
             cls.volume = (Shape.get_height()*cls.area) # <<<===== issue with getting area! from initialization
             print(f"The object is in {cls.dimension} and it's volume is {cls.volume()}")
             
-
-
         # Using @staticmethod decorator to create a static method 
-        # @staticmethod
+        # @staticmethod <<==== have to figure out a staticmethod to use
