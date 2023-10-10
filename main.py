@@ -14,9 +14,10 @@ if __name__ == "__main__": # If this file is being run directly
     frog.set_species("Amphibian")
     frog.set_gender("Female")
     frog.get_DNA()
+    
     # The Shape Class hard coded is instantiated
-    # square = Shape("square", "red", 300)
-    # square.details()
+    square = Shape("square", "red", 300)
+    square.details()
     
     # The Animal Class with user input is instantiated
     
