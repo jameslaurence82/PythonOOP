@@ -4,8 +4,10 @@
 # instance method, static attribute
 class Animal():
     
-    species = "" # class attribute
-    DNA = "Composed of the same Elements" # static attribute
+    # class attribute
+    species = "" 
+    # static attribute (CAPITALIZED to indicate it is static)
+    DNA = "composed of the same Elements\n"
     #__init__ is used to automatically instantiate the Animal class when called
     # Constructor method for Animal class
     def __init__(self, name, weight, locale): # instance attributes for Animal class  
@@ -18,13 +20,18 @@ class Animal():
     def details(self):
         print(f"The animal is: {self.name} and it weighs {self.weight} and it is located in {self.locale}")
 
-    # Using @classmethod decorator to create a class method
+    # class method to call the static class attribute
+    def get_DNA(DNA):
+        print(f"The DNA of the animal is {Animal.DNA}")
+    
+    # Using @classmethod decorator to create a class method 
     @classmethod
-    def set_species(cls, species):
-        cls.species = species
-        print(f"The animal species is {cls.species}")
+    def set_species(cls, species): # cls is used to refer to the class
+        cls.species = species # class attribute is set to the species parameter
+        print(f"The animal species is {cls.species}") # prints the class attribute
         
+    # Using @staticmethod decorator to create a static method    
     @staticmethod
-    def gender(gender):
+    def set_gender(gender):
         print(f"The animal is a {gender}")
 
