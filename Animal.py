@@ -5,6 +5,7 @@
 class Animal():
     
     species = "" # class attribute
+    DNA = "Composed of the same Elements" # static attribute
     #__init__ is used to automatically instantiate the Animal class when called
     # Constructor method for Animal class
     def __init__(self, name, weight, locale): # instance attributes for Animal class  
@@ -19,7 +20,7 @@ class Animal():
 
     # Using @classmethod decorator to create a class method
     @classmethod
-    def species(cls, species):
+    def set_species(cls, species):
         cls.species = species
         print(f"The animal species is {cls.species}")
         
