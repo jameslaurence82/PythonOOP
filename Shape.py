@@ -3,7 +3,8 @@ class Shape:
     
     # class attribute
     dimension = ""
-    volume = ""
+    volume = 0
+    
     # static attribute (CAPITALIZED to indicate it is static)
     SUBJECT = "Geometry"
     
@@ -21,20 +22,27 @@ class Shape:
     # class method to call the static class attribute
     def get_SUBJECT(SUBJECT):
         print(f"In mathematics this is used in {Shape.SUBJECT}")
-    
-    def get_height():
-        return print(input("What is the height of the object?"))
-    
+\
     # Using @classmethod decorator to create a class method 
     @classmethod
     def set_dimension(cls, dimension): # cls is used to refer to the class
-        cls.dimension = dimension # class attribute is set to the dimension parameter
-        if dimension == "2D":
+        # cls.dimension = dimension # class attribute is set to the dimension parameter
+        if cls.dimension == "2D":
             print(f"The object is in {cls.dimension} ") # prints the class attribute 
         else:
-            dimension == "3D"
-            cls.volume = (Shape.get_height()*cls.area) # <<<===== issue with getting area! from initialization
+            cls.dimension == "3D"
+            height = print(input("What is the height of the object?"))
+            cls.volume = height * self.area # <<<===== issue with getting area! from initialization
             print(f"The object is in {cls.dimension} and it's volume is {cls.volume()}")
             
         # Using @staticmethod decorator to create a static method 
-        # @staticmethod <<==== have to figure out a staticmethod to use
+        @staticmethod #<<==== have to figure out a unit conversion method
+        def unitConversion():
+            pass
+        
+# The Shape Class hard coded is instantiated
+square = Shape("square", "red", 300)
+square.details()
+square.get_SUBJECT()
+square.set_dimension("2D")
+square.set_dimension("3D") # <<== issue with this line of code on module
