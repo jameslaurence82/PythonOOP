@@ -15,7 +15,7 @@ class Shape:
         cls.radius = radius
         cls.height = height
         # Return the class instance
-        return cls(length, width,radius)
+        return length, width, radius, height
 
     def area(self, length, width):
         self.length = length
@@ -74,3 +74,8 @@ class Sphere(Shape):
     
 # if __name__ == "__main__":
 #     main()
+
+square = Shape()
+square.shape(3,4,0,3)
+
+print(square.area(length,width))

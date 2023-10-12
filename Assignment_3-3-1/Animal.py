@@ -15,7 +15,7 @@ class Animal():
         self.weight = weight # weight instance attribute
         self.locale = locale # locale instance attribute
 
-    # instance method
+    # instance method should not have print and should have return statement
     # print attributes method for Animal class
     # def details(self):
     #     print(f"The animal is: {self.name} and it weighs {self.weight} and it is located in {self.locale}")
@@ -39,29 +39,38 @@ class Animal():
         cls.species = species # class attribute is set to the species parameter
         return f"The animal species is {cls.species}" # prints the class attribute
     """
-    
-    
-        
+          
     # Using @staticmethod decorator to create a static method    
     @staticmethod
     def set_gender(gender):
         return f"The animal is a {gender}"
+    
 # # The Animal Class hard coded instantiated
-print("\nCreates Hardcoded Animal Class Instance for Horse")
+print("\nCreates and Prints Hardcoded Animal Class Instance for Horse\n")
 horse = Animal("Horse", "1000lbs", "Canada")
 print(horse.details())
 print(horse.set_species("Mammal"))
 print(horse.set_gender("Male"))
 print(horse.get_DNA())
+
+"""
+##################################################
+########## USER GENERATED INPUTS #################
+########## Issues with species and gender ########
+##################################################
 # The Animal Class with user input instantiated
 print("Creates User Defined Animal Class Instance")
 animal1 = Animal("", "", "")
 animal1.name = input("What is the name of the animal? ")
 animal1.weight = input("How much does the animal weigh? ")
 animal1.locale = input("What country is the animal located in? ")
-animal1.set_gender = input("What sex is the animal? ")
+animal1.species = input("What species is it? ")
+animal1.gender = input("What sex is the animal? ")
+
+# User generated Animal data prints
 print("\nPrints User Defined Animal Class Instance")
 print(animal1.details())
-print(animal1.set_species())
-print(animal1.set_gender())
+print(animal1.set_species()) # issues with this code 'str' is not callable
+print(animal1.set_gender()) # issues with this code 'str' is not callable
 print(animal1.get_DNA())
+"""
