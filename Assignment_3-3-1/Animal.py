@@ -1,76 +1,55 @@
-# Creation of Animal class
-# The following will be included in the code below
-# __init__ function, class attribute, class method, instance attribute, 
-# instance method, static attribute
-class Animal():
-    
+class Animal:
     # class attribute
-    species = "" 
+    species = ""
     # static attribute (CAPITALIZED to indicate it is static)
     DNA = "composed of the same Elements\n"
-    #__init__ is used to automatically instantiate the Animal class when called
-    # Constructor method for Animal class
-    def __init__(self, name, weight, locale): # instance attributes for Animal class  
-        self.name = name # species name instance attribute
-        self.weight = weight # weight instance attribute
-        self.locale = locale # locale instance attribute
 
-    # instance method should not have print and should have return statement
-    # print attributes method for Animal class
-    # def details(self):
-    #     print(f"The animal is: {self.name} and it weighs {self.weight} and it is located in {self.locale}")
+    # Constructor method for Animal class
+    def __init__(self, name, weight, locale):
+        # instance attributes for Animal class
+        self.name = name  # species name instance attribute
+        self.weight = weight  # weight instance attribute
+        self.locale = locale  # locale instance attribute
 
     def details(self):
         return f"The animal is: {self.name} and it weighs {self.weight} and it is located in {self.locale}"
 
-    # class method to call the static class attribute
-    def get_DNA(DNA):
-        return f"The DNA of the animal is {Animal.DNA}"
-    
-    # Using @classmethod decorator to create a class method 
+    # class method to get the class attribute
     @classmethod
-    def set_species(cls, species): # cls is used to refer to the class
-        cls.species = species # class attribute is set to the species parameter
-        return f"The animal species is {cls.species}" # prints the class attribute
-    """
-    Test to change to instance method
+    def get_DNA(cls):
+        return f"The DNA of the animal is {cls.DNA}"
+
+    # class method to set the class attribute
     @classmethod
-    def set_species(cls, species): # cls is used to refer to the class
-        cls.species = species # class attribute is set to the species parameter
-        return f"The animal species is {cls.species}" # prints the class attribute
-    """
-          
-    # Using @staticmethod decorator to create a static method    
+    def set_species(cls, species):
+        cls.species = species
+
+    # static method
     @staticmethod
     def set_gender(gender):
         return f"The animal is a {gender}"
-    
-# # The Animal Class hard coded instantiated
+
+# The Animal Class hard-coded instantiated
 print("\nCreates and Prints Hardcoded Animal Class Instance for Horse\n")
 horse = Animal("Horse", "1000lbs", "Canada")
 print(horse.details())
-print(horse.set_species("Mammal"))
+horse.set_species("Mammal")  # Set the species directly
 print(horse.set_gender("Male"))
 print(horse.get_DNA())
 
-"""
-##################################################
-########## USER GENERATED INPUTS #################
-########## Issues with species and gender ########
-##################################################
 # The Animal Class with user input instantiated
 print("Creates User Defined Animal Class Instance")
 animal1 = Animal("", "", "")
 animal1.name = input("What is the name of the animal? ")
 animal1.weight = input("How much does the animal weigh? ")
 animal1.locale = input("What country is the animal located in? ")
-animal1.species = input("What species is it? ")
+species = input("What species is it? ")  # Get the species input
+animal1.set_species(species)  # Set the class attribute 'species' using the method
 animal1.gender = input("What sex is the animal? ")
 
-# User generated Animal data prints
+# User-generated Animal data prints
 print("\nPrints User Defined Animal Class Instance")
 print(animal1.details())
-print(animal1.set_species()) # issues with this code 'str' is not callable
-print(animal1.set_gender()) # issues with this code 'str' is not callable
+print(animal1.species)  # Access the modified class attribute directly
+print(animal1.set_gender("Female"))  # Call the set_gender static method
 print(animal1.get_DNA())
-"""
