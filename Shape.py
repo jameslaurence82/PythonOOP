@@ -20,20 +20,22 @@ class Shape:
         print(f"The Shape is a {self.model} and it is {self.color} in color and it has an area of {self.area} cm squared")
         
     # class method to call the static class attribute
-    def get_SUBJECT(SUBJECT):
+    def the_SUBJECT(SUBJECT):
         print(f"In mathematics this is used in {Shape.SUBJECT}")
 \
     # Using @classmethod decorator to create a class method 
     @classmethod
-    def set_dimension(cls, dimension): # cls is used to refer to the class
+    def the_dimension(cls, newDimension,instance): # cls is used to refer to the class
         # cls.dimension = dimension # class attribute is set to the dimension parameter
-        if cls.dimension == "2D":
+        cls.dimension = newDimension
+        if newDimension == "2D":
             print(f"The object is in {cls.dimension} ") # prints the class attribute 
         else:
-            cls.dimension == "3D"
-            height = print(input("What is the height of the object?"))
-            cls.volume = height * self.area # <<<===== issue with getting area! from initialization
-            print(f"The object is in {cls.dimension} and it's volume is {cls.volume()}")
+            newDimension == "3D"
+            area = float(instance.area)
+            height = float(input("What is the height of the object?"))
+            cls.volume = height * area # <<<===== issue with getting area! from initialization
+            print(f"The object is in {cls.dimension} and it's volume is {cls.volume}")
             
         # Using @staticmethod decorator to create a static method 
         @staticmethod #<<==== have to figure out a unit conversion method
@@ -43,6 +45,6 @@ class Shape:
 # The Shape Class hard coded is instantiated
 square = Shape("square", "red", 300)
 square.details()
-square.get_SUBJECT()
-square.set_dimension("2D")
-square.set_dimension("3D") # <<== issue with this line of code on module
+square.the_SUBJECT()
+square.the_dimension("2D", square)
+square.the_dimension("3D", square) # <<== issue with this line of code on module
