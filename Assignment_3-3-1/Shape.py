@@ -1,47 +1,50 @@
-import math
-
+# Creation of Shape class
 class Shape:
-    def __init__(self, radius):
-        self.radius = radius
-
-    def area(self):
-        return math.pi * self.radius**2
-
+    
+    # class attribute
+    dimension = ""
+    volume = 0
+    
+    # static attribute (CAPITALIZED to indicate it is static)
+    SUBJECT = "Geometry"
+    
+    #__init__ is used to automatically instantiate the Shape class when called
+    # Constructor method for Shape class
+    def __init__(self, model, color, area): # instance attributes for Animal class  
+        self.model = model # Shape type instance attribute
+        self.color = color # Shape color instance attribute
+        self.area = area # Shape area instance attribute
+        
+    # print attributes method for Shape class
+    def details(self):
+        print(f"The Shape is a {self.model} and it is {self.color} in color and it has an area of {self.area} cm squared")
+        
+    # class method to call the static class attribute
+    def the_SUBJECT(SUBJECT):
+        print(f"In mathematics this is used in {Shape.SUBJECT}")
+\
+    # Using @classmethod decorator to create a class method 
     @classmethod
-    def create_shape(cls):
-        radius = float(input("Enter the radius of the circle: "))
-        return cls(radius)
-
-class Sphere(Shape):
-    def __init__(self, radius):
-        super().__init__(radius)
-
-    def area(self):
-        return 4 * math.pi * self.radius**2
-
-    def volume(self):
-        return (4/3) * math.pi * self.radius**3
-
-    @classmethod
-    def create_shape(cls):
-        radius = float(input("Enter the radius of the sphere: "))
-        return cls(radius)
-
-def main():
-    shape_type = input("Enter the type of shape (2D or 3D): ").lower()
-
-    if shape_type == "2d":
-        circle = Shape.create_shape()
-        area = circle.area()
-        print(f"Area of the circle: {area}")
-    elif shape_type == "3d":
-        sphere = Sphere.create_shape()
-        area = sphere.area()
-        volume = sphere.volume()
-        print(f"Surface area of the sphere: {area}")
-        print(f"Volume of the sphere: {volume}")
-    else:
-        print("Invalid input. Please enter '2D' or '3D.")
-
-if __name__ == "__main__":
-    main()
+    def the_dimension(cls, newDimension,instance): # cls is used to refer to the class
+        # cls.dimension = dimension # class attribute is set to the dimension parameter
+        cls.dimension = newDimension
+        if newDimension == "2D":
+            print(f"The object is in {cls.dimension} ") # prints the class attribute 
+        else:
+            newDimension == "3D"
+            area = float(instance.area)
+            height = float(input("What is the height of the object?"))
+            cls.volume = height * area # <<<===== issue with getting area! from initialization
+            print(f"The object is in {cls.dimension} and it's volume is {cls.volume}")
+            
+        # Using @staticmethod decorator to create a static method 
+        @staticmethod #<<==== have to figure out a unit conversion method
+        def unitConversion():
+            pass
+        
+# The Shape Class hard coded is instantiated
+square = Shape("square", "red", 300)
+square.details()
+square.the_SUBJECT()
+square.the_dimension("2D", square)
+square.the_dimension("3D", square) # <<== issue with this line of code on module
