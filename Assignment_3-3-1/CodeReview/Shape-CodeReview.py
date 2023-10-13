@@ -56,9 +56,11 @@ class Shape:
 
 # Creation of Child Class    
 class Square(Shape):
-    
-    def __init__(self,sides):
-        super().__init__(sides)self.side = sides
+    Shape.counter = 0
+    def __init__(self, model, color, area, sides):
+        super().__init__(model, color, area)
+        self.sides = sides
+        Shape.counter =+ 1
     
 
 
@@ -72,7 +74,7 @@ print("This hardcodes 2D option of if statement")
 print(rectangle.the_dimension("2D", rectangle))
 print("This is the hardcodes 3D option of if statement")
 print(rectangle.the_dimension("3D", rectangle)) 
-print(f"This is instiantation # {Shape.counter}")
+print(f"This is instantiation # {Shape.counter}")
 # Creation of the parent class
 print("\nSecond Instantiation of Parent Class")
 print("-------------------------------")
@@ -83,11 +85,11 @@ print("This hardcodes 2D option of if statement")
 print(parallelogram.the_dimension("2D", parallelogram))
 print("This is the hardcodes 3D option of if statement")
 print(parallelogram.the_dimension("3D", parallelogram)) 
-print(f"This is instiantation # {Shape.counter}")
+print(f"This is instantiation # {Shape.counter}")
 # Creation of the child class
-print("\nInstantiation of Child Class")
+print("\nFirst Instantiation of Child Class")
 print("-----------------------------")
-square1 = Square("square", "blue", 400)
+square1 = Square("square", "blue", 400, 4)
 print(square1.details())
 print(square1.the_SUBJECT())
 print("This hardcodes 2D option of if statement")
@@ -95,3 +97,4 @@ print(square1.the_dimension("2D", square1))
 print("This hardcodes 3D option of if statement")
 print(square1.the_dimension("3D", square1)) 
 print(f"This is instantiation # {Shape.counter}")
+print(f"This child class of Shape has {square1.sides} sides")
