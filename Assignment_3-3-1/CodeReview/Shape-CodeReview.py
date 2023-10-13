@@ -80,7 +80,7 @@ class Square(Shape):
 
 # Creation of the parent class
 print("\nFirst Instantiation of Parent Class")
-print("-------------------------------")
+print("--------------------------------------")
 rectangle = Shape("rectangle", "red", 300) # Parent instantiation
 print(rectangle.details()) # calls details method from Parent Class
 print(rectangle.the_SUBJECT()) # calls the static method to print the subject name
@@ -92,7 +92,7 @@ print(Shape.classCounter())
 
 # Creation of the child class
 print("\nFirst Instantiation of Child Class")
-print("-----------------------------")
+print("-------------------------------------")
 square1 = Square("square", "blue", 400, 4)
 print(square1.details()) # calls parent details method from Parent Class
 print(square1.the_SUBJECT()) # calls the parent static method from Parent Class to print the subject name 
@@ -106,7 +106,7 @@ print(Square.classCounter()) # calls the class counter from the child class whic
 
 # Creation of the parent class
 print("\nSecond Instantiation of Parent Class")
-print("-------------------------------")
+print("--------------------------------------")
 parallelogram = Shape("Parallelogram", "purple", 150)
 print(parallelogram.details())
 print(parallelogram.the_SUBJECT())
@@ -115,3 +115,27 @@ print(parallelogram.the_dimension("2D", parallelogram))
 print("This is the hardcodes 3D option of if statement")
 print(parallelogram.the_dimension("3D", parallelogram))
 print(Shape.classCounter()) # calls the parent class counter which will be 2 as this is the second parent class instance
+
+print("4 parent class instantiations and 3 child class instantiations are now created")
+shape1 = Shape("Parallelogram", "purple", 150)
+print(f"parent class {shape1.details()}")
+square2 = Square("square", "blue", 400, 4)
+print(f"child class {square2.details()}")
+shape2 = Shape("Parallelogram", "purple", 150)
+print(f"parent class {shape2.details()}")
+square3 = Square("square", "blue", 400, 4)
+print(f"child class {square3.details()}")
+shape3 = Shape("Parallelogram", "purple", 150)
+print(f"parent class {shape3.details()}")
+square4 = Square("square", "blue", 400, 4)
+print(f"child class {square4.details()}")
+shape4 = Shape("Parallelogram", "purple", 150)
+print(f"parent class {shape4.details()}")
+# after these 4 parent instances there should be 6 instances of the parent class
+# after these 3 child instances there should be 5 instances of the child class
+print("Prints total number of parent class instantiations - should be 6")
+print(Shape.classCounter())
+print("Prints total number of child class instantiations - should be 5")
+print(Square.classCounter())
+
+
