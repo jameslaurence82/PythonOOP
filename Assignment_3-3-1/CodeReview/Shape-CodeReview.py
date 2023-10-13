@@ -116,6 +116,7 @@ print("This is the hardcodes 3D option of if statement")
 print(parallelogram.the_dimension("3D", parallelogram))
 print(Shape.classCounter()) # calls the parent class counter which will be 2 as this is the second parent class instance
 
+""" This code is to test whether my counter works for each class count
 print("4 parent class instantiations and 3 child class instantiations are now created")
 shape1 = Shape("Parallelogram", "purple", 150)
 print(f"parent class {shape1.details()}")
@@ -137,5 +138,8 @@ print("Prints total number of parent class instantiations - should be 6")
 print(Shape.classCounter())
 print("Prints total number of child class instantiations - should be 5")
 print(Square.classCounter())
-
+#############################
+# Issue with these counters #
+#############################
+"""
 
