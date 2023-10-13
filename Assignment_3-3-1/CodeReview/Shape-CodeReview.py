@@ -116,9 +116,12 @@ print("This is the hardcodes 3D option of if statement")
 print(parallelogram.the_dimension("3D", parallelogram))
 print(Shape.classCounter()) # calls the parent class counter which will be 2 as this is the second parent class instance
 
+
+
 """ This code is to test whether my counter works for each class count
 print("4 parent class instantiations and 3 child class instantiations are now created")
 shape1 = Shape("Parallelogram", "purple", 150)
+print(Shape.classCounter())
 print(f"parent class {shape1.details()}")
 square2 = Square("square", "blue", 400, 4)
 print(f"child class {square2.details()}")
@@ -142,4 +145,36 @@ print(Square.classCounter())
 # Issue with these counters #
 #############################
 """
-
+"""
+shape1 = Shape("Parallelogram", "purple", 150)
+print(Shape.classCounter())
+print(f"parent class {shape1.details()}")
+square2 = Square("square", "blue", 400, 4)
+print(Square.classCounter())
+print(f"child class {square2.details()}")
+shape2 = Shape("Parallelogram", "purple", 150)
+print(Shape.classCounter())
+print(f"parent class {shape2.details()}")
+square3 = Square("square", "blue", 400, 4)
+print(Square.classCounter())
+print(f"child class {square3.details()}")
+shape3 = Shape("Parallelogram", "purple", 150)
+print(Shape.classCounter())
+print(f"parent class {shape3.details()}")
+square4 = Square("square", "blue", 400, 4)
+print(Square.classCounter())
+print(f"child class {square4.details()}")
+shape4 = Shape("Parallelogram", "purple", 150)
+print(Shape.classCounter())
+print(f"parent class {shape4.details()}")
+# after these 4 parent instances there should be 6 instances of the parent class
+# after these 3 child instances there should be 5 instances of the child class
+print("Prints total number of parent class instantiations - should be 6")
+print(Shape.classCounter())
+print("Prints total number of child class instantiations - should be 5")
+print(Square.classCounter())
+#############################
+# Issue with these counters still#
+#############################
+"""
+"""
