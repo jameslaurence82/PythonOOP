@@ -48,7 +48,6 @@ animal1 = Animal(name, weight, locale)
 species = input("What species is it? ")  # Get the species input
 gender = input("What sex is the animal? ")
 
-
 # User-generated Animal data prints
 print("\nPrints User Defined Animal Class Instance")
 print(animal1.details())
