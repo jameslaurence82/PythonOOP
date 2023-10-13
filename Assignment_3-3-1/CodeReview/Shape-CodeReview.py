@@ -31,6 +31,11 @@ class Shape:
     def details(self):
         return f"The Shape is a {self.model} and it is {self.color} in color and it has an area of {self.area} cm squared"
     
+    # method to call the class counter
+    @classmethod
+    def classCounter(cls):
+        return f"This is instantiation # {cls.counter} of the Parent Class"
+
     # Using @classmethod decorator to create a class method 
     @classmethod
     def the_dimension(cls, newDimension,instance): # cls is used to refer to the class
@@ -62,19 +67,43 @@ class Square(Shape):
         self.sides = sides
         Shape.counter =+ 1
     
+    def details(self):
+        return f"The Shape is a {self.model} and it is {self.color} in color \nand it has an area of {self.area} cm squared and it has {self.sides} sides."
+    # method to call the class counter
+    @classmethod
+    def classCounter(cls):
+        # this goal of using the same name (classCounter() from the parent is to override it when counting 
+        # the child instances as the values should be different.
+        return f"This is instantiation # {cls.counter} of the Child Class"
+
 
 
 # Creation of the parent class
 print("\nFirst Instantiation of Parent Class")
 print("-------------------------------")
-rectangle = Shape("rectangle", "red", 300)
-print(rectangle.details())
-print(rectangle.the_SUBJECT())
+rectangle = Shape("rectangle", "red", 300) # Parent instantiation
+print(rectangle.details()) # calls details method from Parent Class
+print(rectangle.the_SUBJECT()) # calls the static method to print the subject name
 print("This hardcodes 2D option of if statement")
 print(rectangle.the_dimension("2D", rectangle))
 print("This is the hardcodes 3D option of if statement")
 print(rectangle.the_dimension("3D", rectangle)) 
-print(f"This is instantiation # {Shape.counter}")
+print(Shape.classCounter())
+
+# Creation of the child class
+print("\nFirst Instantiation of Child Class")
+print("-----------------------------")
+square1 = Square("square", "blue", 400, 4)
+print(square1.details()) # calls parent details method from Parent Class
+print(square1.the_SUBJECT()) # calls the parent static method from Parent Class to print the subject name 
+print("This hardcodes 2D option of if statement")
+print(square1.the_dimension("2D", square1)) # uses if statement from Parent Class to say if object is 2d or 3d
+print("This hardcodes 3D option of if statement")
+print(square1.the_dimension("3D", square1)) # else part of if from Parent Class statement for 3d asks for height and gives volume
+print(square1.details(Square)) # calls the details method from the child class which overrides the parent details method
+print(f"This child class of Shape has {square1.sides} sides") 
+print(Square.classCounter())
+
 # Creation of the parent class
 print("\nSecond Instantiation of Parent Class")
 print("-------------------------------")
@@ -85,16 +114,4 @@ print("This hardcodes 2D option of if statement")
 print(parallelogram.the_dimension("2D", parallelogram))
 print("This is the hardcodes 3D option of if statement")
 print(parallelogram.the_dimension("3D", parallelogram)) 
-print(f"This is instantiation # {Shape.counter}")
-# Creation of the child class
-print("\nFirst Instantiation of Child Class")
-print("-----------------------------")
-square1 = Square("square", "blue", 400, 4)
-print(square1.details())
-print(square1.the_SUBJECT())
-print("This hardcodes 2D option of if statement")
-print(square1.the_dimension("2D", square1))
-print("This hardcodes 3D option of if statement")
-print(square1.the_dimension("3D", square1)) 
-print(f"This is instantiation # {Shape.counter}")
-print(f"This child class of Shape has {square1.sides} sides")
+print(Shape.classCounter())
