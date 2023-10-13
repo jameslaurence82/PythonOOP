@@ -68,7 +68,7 @@ class Square(Shape):
         Shape.counter =+ 1
     
     def details(self):
-        return f"The Shape is a {self.model} and it is {self.color} in color \nand it has an area of {self.area} cm squared and it has {self.sides} sides."
+        return f"The Shape is a {self.model} and it is {self.color} in color and it has an area of {self.area} cm squared and it has {self.sides} sides."
     # method to call the class counter
     @classmethod
     def classCounter(cls):
@@ -100,9 +100,9 @@ print("This hardcodes 2D option of if statement")
 print(square1.the_dimension("2D", square1)) # uses if statement from Parent Class to say if object is 2d or 3d
 print("This hardcodes 3D option of if statement")
 print(square1.the_dimension("3D", square1)) # else part of if from Parent Class statement for 3d asks for height and gives volume
-print(square1.details(Square)) # calls the details method from the child class which overrides the parent details method
+print(Square.details(square1)) # calls the details method from the child class which overrides the parent details method
 print(f"This child class of Shape has {square1.sides} sides") 
-print(Square.classCounter())
+print(Square.classCounter()) # calls the class counter from the child class which is different from the parent class counter
 
 # Creation of the parent class
 print("\nSecond Instantiation of Parent Class")
@@ -113,5 +113,5 @@ print(parallelogram.the_SUBJECT())
 print("This hardcodes 2D option of if statement")
 print(parallelogram.the_dimension("2D", parallelogram))
 print("This is the hardcodes 3D option of if statement")
-print(parallelogram.the_dimension("3D", parallelogram)) 
-print(Shape.classCounter())
+print(parallelogram.the_dimension("3D", parallelogram))
+print(Shape.classCounter()) # calls the parent class counter which will be 2 as this is the second parent class instance
